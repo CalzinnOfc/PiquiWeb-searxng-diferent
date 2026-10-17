@@ -1,4 +1,3 @@
 FROM searxng/searxng:latest
-
-# Copia as tuas configurações personalizadas para dentro do container
-COPY settings.yml /etc/searxng/settings.yml
+EXPOSE 8080
+CMD ["/sbin/tini", "--", "/usr/local/searxng/docker-entrypoint.sh"]
